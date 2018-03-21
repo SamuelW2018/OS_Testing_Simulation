@@ -13,6 +13,7 @@ class Student:
         self.getPID()
         self.InClass = False
         self.InQueue = False
+        self.FrontTime = 0
         self.TestSpeed = random.randint(1, 101)
         
     #__del__ is called when the object is deleted. When it is deleted, the ID returns
@@ -45,10 +46,50 @@ class Student:
         return self.PTime
 
     #Places a student object in a queue.
-    def assignQueue(self):
+    def assignQueue(self, T, QList):
+        self.QStime = T
+        minlength = 100
+        optQueue = -1
+        for i in range(0, len(QList)):
+            if len(QList[i]) =< minlength:
+                minlength = len(QList[i])
+                optQueue = i
+        self.Q = QList[optQueue]
+        QList[optQueue].append[self]
+                
+
+    def InFront(self, SQ):
+        if SQ[0] == self:
+            #self.FrontTime = 0
+            return True
+        return False
+
+    def QueueTime(self, T):
+        self.QueueTime = T - self.QStime
+        return self.QueueTime
 
     #Takes a student out of the queue it is in and puts it in a classroom.
-    def assignClassroom(self):
+    def assignClassroom(self, Croom)
+    
+class StudentQueue:
+    
+    def __init__(self, Schedule):
+        self.alg = Schedule
+
+    def getSize(self):
+        
+        
+
+class Classroom:
+
+    def __init__(self):
+        self.isFull = False
+
+    def fill(self):
+        self.isFull = True
+
+    def empty(self):
+        self.isFull = False
 
 E = 0
 #Testing function/Simulation.
